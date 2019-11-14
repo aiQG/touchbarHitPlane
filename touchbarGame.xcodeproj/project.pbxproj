@@ -13,7 +13,7 @@
 		59FAA5BF237BF84500350EF1 /* TouchbarGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FAA5BE237BF84500350EF1 /* TouchbarGameScene.swift */; };
 		59FAA5C1237BF8A500350EF1 /* TouchbarGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 59FAA5C0237BF8A500350EF1 /* TouchbarGameScene.sks */; };
 		59FAA5C5237BFAC300350EF1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 59FAA5C4237BFAC300350EF1 /* README.md */; };
-		59FAA5C7237C162900350EF1 /* window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FAA5C6237C162900350EF1 /* window.swift */; };
+		59FAA5F9237D903700350EF1 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FAA5F8237D903700350EF1 /* GameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +26,7 @@
 		59FAA5BE237BF84500350EF1 /* TouchbarGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchbarGameScene.swift; sourceTree = "<group>"; };
 		59FAA5C0237BF8A500350EF1 /* TouchbarGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TouchbarGameScene.sks; sourceTree = "<group>"; };
 		59FAA5C4237BFAC300350EF1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		59FAA5C6237C162900350EF1 /* window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = window.swift; sourceTree = "<group>"; };
+		59FAA5F8237D903700350EF1 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 			children = (
 				59FAA5A6237BED8F00350EF1 /* AppDelegate.swift */,
 				59FAA5B2237BED8F00350EF1 /* Main.storyboard */,
-				59FAA5C6237C162900350EF1 /* window.swift */,
+				59FAA5F8237D903700350EF1 /* GameView.swift */,
 				59FAA5C2237BF8C100350EF1 /* Touchbar Game Scene */,
 				59FAA5B0237BED8F00350EF1 /* Assets.xcassets */,
 				59FAA5B5237BED8F00350EF1 /* Info.plist */,
@@ -152,8 +152,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59FAA5C7237C162900350EF1 /* window.swift in Sources */,
 				59FAA5BF237BF84500350EF1 /* TouchbarGameScene.swift in Sources */,
+				59FAA5F9237D903700350EF1 /* GameView.swift in Sources */,
 				59FAA5A7237BED8F00350EF1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

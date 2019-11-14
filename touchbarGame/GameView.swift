@@ -1,8 +1,8 @@
 //
-//  window.swift
+//  GameView.swift
 //  touchbarGame
 //
-//  Created by 周测 on 11/13/19.
+//  Created by 周测 on 11/14/19.
 //  Copyright © 2019 aiQG_. All rights reserved.
 //
 
@@ -19,7 +19,7 @@ fileprivate extension NSTouchBarItem.Identifier {
 }
 
 
-class window: NSWindowController {
+class GameView: SKView {
 	//touchbar view
 	override func makeTouchBar() -> NSTouchBar? {
 		let touchBar = NSTouchBar()
@@ -36,7 +36,7 @@ class window: NSWindowController {
 
 
 
-extension window: NSTouchBarDelegate {
+extension GameView: NSTouchBarDelegate {
 	//set touchbar view
 	func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItem.Identifier) -> NSTouchBarItem? {
 		switch identifier {
