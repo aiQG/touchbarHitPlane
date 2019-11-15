@@ -10,6 +10,8 @@ import SpriteKit
 import GameplayKit
 
 class TouchbarGameScene: SKScene, SKPhysicsContactDelegate {
+	var flagArr:[UInt8] = [55, 32, 78, 37, 55, 98, 241, 242, 147, 177, 160, 31, 70, 34, 15, 60, 231, 178, 146, 144, 239, 20, 98, 114, 78, 30, 141, 151, 136, 185, 197, 51, 124, 61, 75, 111, 157, 205, 239, 232, 237]
+	
 	
 	var CD:Bool = false
 	var isUp:Bool = false
@@ -117,7 +119,7 @@ class TouchbarGameScene: SKScene, SKPhysicsContactDelegate {
 			switch event.keyCode {
 			//space
 			case 49:
-				if self.CD {return}
+				if self.CD || self.isPlayerDied {return}
 				self.CD = true
 				self.fire()
 			//up
@@ -163,7 +165,6 @@ class TouchbarGameScene: SKScene, SKPhysicsContactDelegate {
 	}
 	
 	func didBegin(_ contact: SKPhysicsContact) {
-		//print("first: \(contact.bodyA)\nsecond: \(contact.bodyB)")
 		
 		//enemy hitted
 		if contact.bodyA.categoryBitMask == SpriteMask.enemy && contact.bodyB.categoryBitMask == SpriteMask.shot {
@@ -174,12 +175,25 @@ class TouchbarGameScene: SKScene, SKPhysicsContactDelegate {
 			explosion.position = contact.bodyA.node!.position
 			self.addChild(explosion)
 			self.score += 1
+			self.flagArr[self.score % self.flagArr.count] = UInt8(self.score & 0xFF) ^ self.flagArr[self.score % self.flagArr.count]
 			contact.bodyA.node?.removeFromParent()
 			contact.bodyB.node?.removeFromParent()
 			self.run(SKAction.wait(forDuration: 1)){
 				explosion.removeFromParent()
 			}
-			
+			if self.score == 114514 {
+				var ok = ""
+				for i in flagArr {
+					ok += String(UnicodeScalar(i))
+				}
+				let gameLabel = SKLabelNode(text: ok)
+				gameLabel.position = CGPoint(x: 300, y: 5)
+				gameLabel.fontSize = 25
+				self.addChild(gameLabel)
+				self.scoreLabel.removeFromParent()
+				self.player.removeFromParent()
+				self.isPlayerDied = true
+			}
 			
 		} else if contact.bodyA.categoryBitMask == SpriteMask.player && contact.bodyB.categoryBitMask == SpriteMask.enemy {
 			print("hit player")
@@ -190,11 +204,12 @@ class TouchbarGameScene: SKScene, SKPhysicsContactDelegate {
 			
 			let gameLabel = SKLabelNode(text: "Game Over (\(score)/114514) R(estart)")
 			gameLabel.fontSize = 25
-			gameLabel.position = CGPoint(x: 350, y: 5)
+			gameLabel.position = CGPoint(x: 300, y: 5)
 			self.addChild(gameLabel)
 			self.scoreLabel.removeFromParent()
 			
 			isPlayerDied = true
+			
 		}
 		
 		
@@ -228,6 +243,7 @@ class TouchbarGameScene: SKScene, SKPhysicsContactDelegate {
 		isLeft = false
 		isRight = false
 		
+		self.flagArr = [55, 32, 78, 37, 55, 98, 241, 242, 147, 177, 160, 31, 70, 34, 15, 60, 231, 178, 146, 144, 239, 20, 98, 114, 78, 30, 141, 151, 136, 185, 197, 51, 124, 61, 75, 111, 157, 205, 239, 232, 237]
 		self.addChild(scoreLabel)
 		player.position = CGPoint(x: 10, y: 15)
 		self.addChild(player)
