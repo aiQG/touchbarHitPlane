@@ -19,6 +19,10 @@ fileprivate extension NSTouchBarItem.Identifier {
 }
 
 
+
+
+
+
 class GameView: SKView {
 	//touchbar view
 	override func makeTouchBar() -> NSTouchBar? {
@@ -30,6 +34,15 @@ class GameView: SKView {
 		return touchBar
 	}
 	
+	var didReceiveEvent: ((NSEvent) -> Void)?
+	
+	override func keyDown(with event: NSEvent) {
+		didReceiveEvent?(event)
+	}
+	
+	override func keyUp(with event: NSEvent) {
+		didReceiveEvent?(event)
+	}
 	
 }
 
@@ -48,6 +61,8 @@ extension GameView: NSTouchBarDelegate {
 			let item = NSCustomTouchBarItem(identifier: identifier)
 			item.view = gameView
 			gameView.presentScene(scene)
+			//转发到scene里
+			self.didReceiveEvent = scene.didReceive
 			
 			return item
 		default:

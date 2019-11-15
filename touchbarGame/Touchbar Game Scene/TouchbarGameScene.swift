@@ -11,7 +11,6 @@ import GameplayKit
 
 class TouchbarGameScene: SKScene, SKPhysicsContactDelegate {
 	
-	
 	var player:SKSpriteNode!
 	
 	var scoreLabel:SKLabelNode!
@@ -92,7 +91,7 @@ class TouchbarGameScene: SKScene, SKPhysicsContactDelegate {
 		
 		self.addChild(shot)
 		//动画
-		let animationDuration:TimeInterval = 0.3
+		let animationDuration:TimeInterval = 0.5
 		var actionArry = [SKAction]() //动画队列
 		actionArry.append(SKAction.move(to: CGPoint(x: 700, y: player.position.y), duration: animationDuration))
 		actionArry.append(SKAction.removeFromParent())
@@ -100,7 +99,39 @@ class TouchbarGameScene: SKScene, SKPhysicsContactDelegate {
 		
 	}
 	
-
+	func didReceive(event: NSEvent) {
+		if event.type == .keyDown {
+			switch event.keyCode {
+			//space
+			case 49:
+				self.fire()
+				
+			//up
+			case 126:
+				return
+				
+			//down
+			case 125:
+				return
+				
+			//left
+			case 123:
+				return
+				
+			//right
+			case 124:
+				return
+				
+			default:
+				print(event)
+				return
+			}
+		} else if event.type == .keyUp {
+			//keyup
+			print(event)
+		}
+	}
+	
 	
 	
 	
