@@ -11,6 +11,12 @@ import GameplayKit
 
 class TouchbarGameScene: SKScene, SKPhysicsContactDelegate {
 	
+	var isUp:Bool = false
+	var isDown:Bool = false
+	var isLeft:Bool = false
+	var isRight:Bool = false
+	
+	
 	var player:SKSpriteNode!
 	
 	var scoreLabel:SKLabelNode!
@@ -105,30 +111,38 @@ class TouchbarGameScene: SKScene, SKPhysicsContactDelegate {
 			//space
 			case 49:
 				self.fire()
-				
 			//up
 			case 126:
-				return
-				
+				isUp = true
 			//down
 			case 125:
-				return
-				
+				isDown = true
 			//left
 			case 123:
-				return
-				
+				isLeft = true
 			//right
 			case 124:
-				return
-				
+				isRight = true
 			default:
 				print(event)
-				return
 			}
 		} else if event.type == .keyUp {
-			//keyup
-			print(event)
+			switch event.keyCode {
+			//up
+			case 126:
+				isUp = false
+			//down
+			case 125:
+				isDown = false
+			//left
+			case 123:
+				isLeft = false
+			//right
+			case 124:
+				isRight = false
+			default:
+				print(event)
+			}
 		}
 	}
 	
@@ -136,7 +150,20 @@ class TouchbarGameScene: SKScene, SKPhysicsContactDelegate {
 	
 	
     override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
+        // movement
+		if player.position.y <= 30 - 5 {
+			player.position.y += isUp ? 1.25 : 0
+		}
+		if player.position.y >= 5 {
+			player.position.y -= isDown ? 1.25 : 0
+		}
+		if player.position.x < 678 {
+			player.position.x += isRight ? 2 : 0
+		}
+		if player.position.x > 10 {
+			player.position.x -= isLeft ? 2 : 0
+		}
     }
+	
 	
 }
