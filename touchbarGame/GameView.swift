@@ -55,8 +55,8 @@ extension GameView: NSTouchBarDelegate {
 		switch identifier {
 		case NSTouchBarItem.Identifier.identifier:
 			let gameView = SKView()
-			gameView.showsFPS = true
-			gameView.showsNodeCount = true
+//			gameView.showsFPS = true
+//			gameView.showsNodeCount = true
 			let scene = TouchbarGameScene()
 			let item = NSCustomTouchBarItem(identifier: identifier)
 			item.view = gameView

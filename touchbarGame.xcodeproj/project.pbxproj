@@ -11,9 +11,12 @@
 		59FAA5B1237BED8F00350EF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59FAA5B0237BED8F00350EF1 /* Assets.xcassets */; };
 		59FAA5B4237BED8F00350EF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59FAA5B2237BED8F00350EF1 /* Main.storyboard */; };
 		59FAA5BF237BF84500350EF1 /* TouchbarGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FAA5BE237BF84500350EF1 /* TouchbarGameScene.swift */; };
-		59FAA5C1237BF8A500350EF1 /* TouchbarGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 59FAA5C0237BF8A500350EF1 /* TouchbarGameScene.sks */; };
 		59FAA5C5237BFAC300350EF1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 59FAA5C4237BFAC300350EF1 /* README.md */; };
 		59FAA5F9237D903700350EF1 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FAA5F8237D903700350EF1 /* GameView.swift */; };
+		59FAA5FF237E7CF200350EF1 /* MaskStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FAA5FE237E7CF100350EF1 /* MaskStruct.swift */; };
+		59FAA602237E98BC00350EF1 /* KilledEnemy.sks in Resources */ = {isa = PBXBuildFile; fileRef = 59FAA600237E98BC00350EF1 /* KilledEnemy.sks */; };
+		59FAA603237E98BC00350EF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59FAA601237E98BC00350EF1 /* Assets.xcassets */; };
+		59FAA607237E9F2300350EF1 /* KilledPlayer.sks in Resources */ = {isa = PBXBuildFile; fileRef = 59FAA606237E9F2300350EF1 /* KilledPlayer.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,9 +27,12 @@
 		59FAA5B5237BED8F00350EF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59FAA5B6237BED8F00350EF1 /* touchbarGame.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = touchbarGame.entitlements; sourceTree = "<group>"; };
 		59FAA5BE237BF84500350EF1 /* TouchbarGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchbarGameScene.swift; sourceTree = "<group>"; };
-		59FAA5C0237BF8A500350EF1 /* TouchbarGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TouchbarGameScene.sks; sourceTree = "<group>"; };
 		59FAA5C4237BFAC300350EF1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		59FAA5F8237D903700350EF1 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		59FAA5FE237E7CF100350EF1 /* MaskStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskStruct.swift; sourceTree = "<group>"; };
+		59FAA600237E98BC00350EF1 /* KilledEnemy.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = KilledEnemy.sks; sourceTree = "<group>"; };
+		59FAA601237E98BC00350EF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		59FAA606237E9F2300350EF1 /* KilledPlayer.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = KilledPlayer.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +81,10 @@
 			isa = PBXGroup;
 			children = (
 				59FAA5BE237BF84500350EF1 /* TouchbarGameScene.swift */,
-				59FAA5C0237BF8A500350EF1 /* TouchbarGameScene.sks */,
+				59FAA5FE237E7CF100350EF1 /* MaskStruct.swift */,
+				59FAA606237E9F2300350EF1 /* KilledPlayer.sks */,
+				59FAA600237E98BC00350EF1 /* KilledEnemy.sks */,
+				59FAA601237E98BC00350EF1 /* Assets.xcassets */,
 			);
 			path = "Touchbar Game Scene";
 			sourceTree = "<group>";
@@ -139,9 +148,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				59FAA5C5237BFAC300350EF1 /* README.md in Resources */,
+				59FAA607237E9F2300350EF1 /* KilledPlayer.sks in Resources */,
+				59FAA602237E98BC00350EF1 /* KilledEnemy.sks in Resources */,
 				59FAA5B1237BED8F00350EF1 /* Assets.xcassets in Resources */,
-				59FAA5C1237BF8A500350EF1 /* TouchbarGameScene.sks in Resources */,
 				59FAA5B4237BED8F00350EF1 /* Main.storyboard in Resources */,
+				59FAA603237E98BC00350EF1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59FAA5FF237E7CF200350EF1 /* MaskStruct.swift in Sources */,
 				59FAA5BF237BF84500350EF1 /* TouchbarGameScene.swift in Sources */,
 				59FAA5F9237D903700350EF1 /* GameView.swift in Sources */,
 				59FAA5A7237BED8F00350EF1 /* AppDelegate.swift in Sources */,
